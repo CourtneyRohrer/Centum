@@ -3,7 +3,7 @@
 
 
 <head>
-    <title>App Name: A Coding Project by Courtney Rohrer</title>
+    <title>Centum: A Coding Project by Courtney Rohrer</title>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -15,6 +15,10 @@
     <link rel="stylesheet" href="/css/site.css">
     <link rel="icon" type="image/png" href="/img/favicon-32x32.png">
     <link rel="stylesheet" href="/css/prism.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Racing+Sans+One&display=swap" rel="stylesheet">
+
 
 </head>
 
@@ -22,7 +26,7 @@
 <!-- === NAV SECTION === -->
 <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
     <div class="container-fluid">
-        <a class="navbar-brand" href="#"><img src="/img/favicon-32x32.png" class="d-inline-block align-text-top" alt="Courtney Rohrer Logo" width="30" height="24"> APP NAME</a>
+        <a class="title-font navbar-brand" href="#"><img src="/img/favicon-32x32.png" class="d-inline-block align-text-top" alt="Courtney Rohrer Logo" width="30" height="24"> CENTUM</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse"
             aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -53,17 +57,70 @@
 
 <main class="flex-shrink-0">
 <div class="container py-5 mt-5 px-5">
-    <h2 class="border-1 border-bottom border-dark">The Code for APP NAME</h2>
+    <h2 class="border-1 border-bottom border-dark title-font">The Code for CENTUM</h2>
     <div class="row row-cols-1 row-cols-lg-2">
         <div class="col-lg-8">
             <pre class="line-numbers"><code class="language-javascript">
-                //Call Hello World 
-                function helloWorld(){
-                    alert("Hello World");
-                }
+    //get values from page
+    //starts or controller function
+    function getValues(){
+    //get values from the page
+    let startValue = document.getElementById("startValue").value;
+    let endValue = document.getElementById("endValue").value; 
+
+    //I need to validate the input
+    //parse into Integers
+    startValue = parseInt(startValue);
+    endValue = parseInt(endValue);
+
+    if (Number.isInteger(startValue) && Number.isInteger(endValue)) {
+        //call generateNumbers
+        let numbers = generateNumbers(startValue, endValue);
+            //we call displayNumbers
+         displayNumbers(numbers);
+
+    } else {
+        alert("You must enter intergers")
+        }
+    }
+
+    //generate numbers from the start to end value
+    //logic function(s)
+    function generateNumbers(sValue, eValue){
+    let numbers = [];
+
+    for (let index = sValue; index <= eValue; index++){
+        numbers.push(index);      
+    }
+    return numbers;
+    }
+
+    //display the numbers and mark the even numbers bold 
+    //view function
+    function displayNumbers(numbers){
+
+    let templateRows = "";
+    for (let index = 0; index < numbers.length; index++) {
+
+        let className = "even";
+        let number = numbers[index];
+
+        if(number % 2 == 0){
+            className = "even";
+        }
+        else {
+            className = "odd"
+            }
+        //This does render correctly with Prisim source
+        templateRows += `&lt;tr>&lt;td class="${className}" >${number}&lt;/td>&lt;/tr>
+        
+    }
+
+    document.getElementById("results").innerHTML = templateRows;
+    }
             </code></pre>
         </div>
-        <div class="col-lg-4">
+        <div class="col-lg-4 body-font">
             <p>The Code is Structured in one Function</p>
             <h5>Hello World</h5>
             <p>Hello World is a function that displays an alert with a message of "Hello World"</p>

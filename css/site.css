@@ -5,6 +5,14 @@
     --white-color: #ffffff;
 }
 
+.odd {
+    font-weight: 100;
+}
+
+.even {
+    font-weight: bold;
+}
+
 body {
     color: var(--dark-color);
 }
@@ -24,6 +32,14 @@ h1,h2,h3,h4,h5,h6 {
 
 main>.container {
     padding: 60px 15px 0;
+}
+
+.title-font {
+    font-family: 'Racing Sans One', cursive;
+}
+
+.body-font {
+    font-family: 'Montserrat', sans-serif;
 }
 
 .sticky-nav {
