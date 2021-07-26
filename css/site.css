@@ -1,5 +1,5 @@
 :root {
-    --primary-color: #1d5888;
+    --primary-color: #BF0000;
     --secondary-color: #ff0000;
     --dark-color: #292929;
     --white-color: #ffffff;
@@ -35,11 +35,12 @@ main>.container {
 }
 
 .title-font {
-    font-family: 'Racing Sans One', cursive;
+    font-family: 'Abril Fatface', cursive;
 }
 
 .body-font {
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Roboto', sans-serif;
+    color: var(--dark-color);
 }
 
 .sticky-nav {
