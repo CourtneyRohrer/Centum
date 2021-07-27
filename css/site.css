@@ -36,7 +36,8 @@ main>.container {
 }
 
 .title-font {
-    font-family: 'Abril Fatface', cursive;
+    font-family: 'STIX Two Math', serif;
+    font-size: 32px;
 }
 
 .body-font {
@@ -58,7 +59,7 @@ footer .social>a {
 
 footer .social>a:hover {
     opacity: 0.9;
-    color: var(--secondary-color);
+    color: var(--primary-color);
 }
 
 .bsicon{
@@ -78,7 +79,7 @@ footer .social>a:hover {
     }
 
 .checklist >li i {
-    color: var(--secondary-color);
+    color: var(--primary-color);
     }
 
 code[class*="language-"],
